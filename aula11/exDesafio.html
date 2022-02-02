@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste Pais</title>
+  </head>
+  <body>
+    <h1>Estrangeiro ou Não</h1>
+    <p>De qual país você é? <input type="text" name="pais" id="pais" /></p>
+    <input type="button" value="Verificar" onclick="verificar()" />
+    <div id="nacionalidade"></div>
+
+    <script>
+      function verificar() {
+        var txtp = document.querySelector('input#pais')
+        var paisOrigem = txtp.value
+        var nacionalidade = document.querySelector('div#nacionalidade')
+        nacionalidade.innerHTML = `<p>Seu pais de origem é ${paisOrigem}</p>`
+
+        if (paisOrigem != 'Brasil') {
+          nacionalidade.innerHTML += `<p>Você é Estrangeiro</p>`
+        } else {
+          nacionalidade.innerHTML += `<p> Você é Brasileiro</p>`
+        }
+      }
+    </script>
+  </body>
+</html>
